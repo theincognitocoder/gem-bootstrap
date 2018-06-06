@@ -1,0 +1,30 @@
+script: bundle exec rake build
+rvm:
+- ruby-2.1.10
+- ruby-2.2.10
+- ruby-2.3.7
+- ruby-2.4.4
+- ruby-2.5.1
+- ruby-head
+- jruby-head
+deploy:
+- provider: rubygems
+  gemspec: {{gem_name}}.gemspec
+  skip_cleanup: true
+  api_key:
+  on:
+    ruby: ruby-2.5.1
+    branch: master
+    tags: true
+- provider: releases
+  skip_cleanup: true
+  fileglob: true
+  file:
+  - docs.tgz
+  - {{gem_name}}-*.gem
+  api_key:
+  on:
+    ruby: ruby-2.5.1
+    repo: {{github_repo}}
+    branch: master
+    tags: true

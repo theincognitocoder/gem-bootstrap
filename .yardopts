@@ -1,0 +1,8 @@
+--title 'Gem Bootstrap'
+--output-dir docs
+--markup markdown
+--markup-provider kramdown
+--hide-api private
+--no-progress
+--plugin sitemap
+lib/**/*.rb

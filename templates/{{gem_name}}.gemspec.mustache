@@ -1,0 +1,33 @@
+# frozen_string_literal: true
+
+Gem::Specification.new do |spec|
+  spec.name          = '{{gem_name}}'
+  spec.version       = File.read(File.expand_path('VERSION', __dir__)).strip
+  spec.summary       = '{{project_description}}'
+  spec.description   = '{{project_description}}'
+  spec.authors       = ['{{author_name}}']
+  spec.email         = ['{{author_email}}']
+  spec.homepage      = '{{github_url}}'
+  spec.license       = 'MIT'
+  spec.require_paths = ['lib']
+  spec.files         = Dir['lib/**/*.rb']
+
+  spec.metadata = {
+    'bug_tracker_uri'   => '{{github_url}}/issues',
+    'changelog_uri'     => '{{changelog_url}}',
+    'documentation_uri' => '{{docs_url}}',
+    'homepage_uri'      => '{{github_url}}',
+    'mailing_list_uri'  => '{{gitter_url}}',
+    'source_code_uri'   => '{{github_url}}',
+    'wiki_uri'          => '{{github_url}}/wiki',
+  }
+
+  spec.add_development_dependency('coveralls', '~> 0.8')
+  spec.add_development_dependency('kramdown', '~> 1.16')
+  spec.add_development_dependency('pry', '~> 0.11')
+  spec.add_development_dependency('rake', '~> 12.3')
+  spec.add_development_dependency('rspec', '~> 3.7')
+  spec.add_development_dependency('rubocop', '~> 0.56')
+  spec.add_development_dependency('yard', '~> 0.9')
+  spec.add_development_dependency('yard-sitemap', '~> 1.0')
+end
