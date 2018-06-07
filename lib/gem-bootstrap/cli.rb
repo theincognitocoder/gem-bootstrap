@@ -116,6 +116,7 @@ module GemBootstrap
 
     def bundle_install(config)
       Dir.chdir(config.gem_name) do
+        sh('gem install bundler')
         sh('bundle install')
         sh('rake test')
       end
