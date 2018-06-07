@@ -63,7 +63,7 @@ module GemBootstrap
     # @param [Symbol] color
     # @param [String] file_path
     def log(action, color, file_path)
-      action = Rainbow(format("%13s", action)).bold.send(color)
+      action = Rainbow(format('%13s', action)).bold.send(color)
       @io.puts(action + ' ' + file_path)
     end
 

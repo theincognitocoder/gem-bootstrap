@@ -20,20 +20,27 @@ module GemBootstrap
 
     # @return [Boolean] Returns `true` if the file should be overwritten
     def should_overwrite?(file_path, old_contents, new_contents)
-      return true if @overwrite_all
-      loop do
-        case prompt(file_path).downcase.strip
-        when 'y' then return true
-        when 'n' then return false
-        when 'a' then @overwrite_all = true; return true
-        when 'q' then throw :exit, 0
-        when 'd' then print_diff(old_contents, new_contents)
-        else print_help
-        end
+      if @overwrite_all
+        true
+      else
+        ask(file_path, old_contents, new_contents)
       end
     end
 
     private
+
+    def ask(path, old, new)
+      loop do
+        case prompt(path).downcase.strip
+        when 'y' then return true
+        when 'n' then return false
+        when 'a' then return @overwrite_all = true
+        when 'q' then throw :exit, 0
+        when 'd' then print_diff(old, new)
+        else print_help
+        end
+      end
+    end
 
     def prompt(file_path)
       @io.write(format(PROMPT, path: file_path))

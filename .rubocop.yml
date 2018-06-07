@@ -12,6 +12,9 @@ Layout/MultilineMethodCallBraceLayout:
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
 
