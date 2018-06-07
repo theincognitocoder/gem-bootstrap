@@ -80,7 +80,7 @@ module GemBootstrap
     def generate_src(config)
       mkdir(config.gem_name)
       builder = Builder.new(config: config, io: @io)
-      builder.generate_src(dir: dir)
+      builder.generate_src(dir: config.gem_name)
     end
 
     def ensure_gem_name_available(config)

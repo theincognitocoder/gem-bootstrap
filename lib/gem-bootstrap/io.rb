@@ -26,24 +26,5 @@ module GemBootstrap
       @input.readline
     end
 
-    def prompt(string, default: nil)
-      question = prompt_string(string, default)
-      response = nil
-      while response.nil?
-        write(question)
-        response = readline.strip
-        response = default if response.empty?
-      end
-      response
-    end
-
-    def prompt_string(string, default)
-      if default.nil?
-        format('%<p>s: ', p: string)
-      else
-        format('%<p>s [%<d>s]: ', p: string, d: default.to_s)
-      end
-    end
-
   end
 end

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'diffy'
 require 'rainbow'
 
 module GemBootstrap
@@ -8,6 +7,7 @@ module GemBootstrap
   class FileWriter
 
     def initialize(io:)
+      @conflicts = FileConflictManager.new(io: io)
       @io = io
     end
 
@@ -25,7 +25,7 @@ module GemBootstrap
       directory = File.dirname(file_path)
       FileUtils.mkdir_p(directory) unless File.exist?(directory)
       File.write(file_path, file_contents)
-      log(Rainbow('       create').bold.green, file_path)
+      log('create', :green, file_path)
     end
 
     # @param [String] file_path
@@ -34,27 +34,37 @@ module GemBootstrap
       old_contents = File.read(file_path)
       new_contents = file_contents
       if old_contents == new_contents
-        log(Rainbow('    identical').bold.white, file_path)
+        log('identical', :white, file_path)
       else
         handle_file_conflict(file_path, old_contents, new_contents)
       end
     end
 
     # @param [String] file_path
-    # @param [String] old_contents
-    # @param [String] new_contents
-    def handle_file_conflict(file_path, old_contents, new_contents)
-      # TODO : handle conflicts
-      log(Rainbow('     conflict').bold.yellow, file_path)
-      print("\n")
-      print(Diffy::Diff.new(old_contents, new_contents).to_s(:color))
-      print("\n")
+    # @param [String] old
+    # @param [String] new
+    def handle_file_conflict(file_path, old, new)
+      if @conflicts.overwrite_all?
+        log('force', :yellow, file_path)
+        File.write(file_path, new)
+        return
+      end
+
+      log('conflict', :red, file_path)
+      if @conflicts.should_overwrite?(file_path, old, new)
+        log('force', :yellow, file_path)
+        File.write(file_path, new)
+      else
+        log('skip', :yellow, file_path)
+      end
     end
 
     # @param [String] action
+    # @param [Symbol] color
     # @param [String] file_path
-    def log(action, file_path)
-      @io.puts("#{action} #{file_path}")
+    def log(action, color, file_path)
+      action = Rainbow(format("%13s", action)).bold.send(color)
+      @io.puts(action + ' ' + file_path)
     end
 
   end
