@@ -19,7 +19,7 @@ module GemBootstrap
       @gem_name = gem_name
       @author_name = author_name
       @author_email = author_email
-      @project_description = project_name
+      @project_summary = project_name
       @github_username = github_username
       @github_repo = "#{github_username}/#{gem_name}"
       @year = Time.now.utc.year
@@ -33,7 +33,7 @@ module GemBootstrap
     attr_reader :project_name
 
     # @return [String]
-    attr_reader :project_description
+    attr_reader :project_summary
 
     # @return [String]
     attr_reader :module_name

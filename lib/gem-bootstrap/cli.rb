@@ -94,7 +94,7 @@ module GemBootstrap
     def setup_github_repo(config)
       @gh.create_repo(
         name: config.gem_name,
-        description: config.project_description,
+        description: config.project_summary,
         homepage: config.github_url
       )
       git_init_commit_push(config)

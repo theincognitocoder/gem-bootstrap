@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |spec|
   spec.name          = 'gem-bootstrap'
   spec.version       = File.read(File.expand_path('VERSION', __dir__)).strip
   spec.summary       = 'CLI for bootstrapping new Ruby gem projects.'
-  spec.description   = 'Bootstraps a Ruby gem project.'
   spec.authors       = ['The Incognito Coder']
   spec.email         = ['theincognitocoder@gmail.com']
   spec.homepage      = 'https://github.com/theincognitocoder/gem-bootstrap'
@@ -43,3 +43,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('yard', '~> 0.9')
   spec.add_development_dependency('yard-sitemap', '~> 1.0')
 end
+# rubocop:enable Metrics/BlockLength
