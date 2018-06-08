@@ -26,7 +26,7 @@ module GemBootstrap
       @docs_url = "https://www.rubydoc.info/github/#{github_repo}/master"
       @gitter_url = "https://gitter.im/#{github_username}"
       @github_url = "https://github.com/#{github_repo}"
-      @changelog_url = @github_url + 'blob/master/CHANGELOG.md'
+      @changelog_url = @github_url + '/blob/master/CHANGELOG.md'
     end
 
     # @return [String]
