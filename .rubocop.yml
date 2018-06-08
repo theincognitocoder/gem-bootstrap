@@ -10,7 +10,7 @@ Layout/EmptyLinesAroundClassBody:
   EnforcedStyle: empty_lines_except_namespace
 
 Layout/MultilineMethodCallBraceLayout:
-  EnforcedStyle: new_line
+  EnforcedStyle: symmetrical
 
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
