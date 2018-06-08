@@ -1,7 +1,7 @@
 # Gem Bootstrap
 
 [![Build Status](https://travis-ci.org/theincognitocoder/gem-bootstrap.svg?branch=master)](https://travis-ci.org/theincognitocoder/gem-bootstrap)
-[![Coverage Status](https://coveralls.io/repos/github/gem-bootstrap/badge.svg?branch=master)](https://coveralls.io/github/theincognitocoder/gem-bootstrap)
+[![Coverage Status](https://coveralls.io/repos/github/theincognitocoder/gem-bootstrap/badge.svg?branch=master)](https://coveralls.io/github/theincognitocoder/gem-bootstrap?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f9ac56f41cd6333d98ee/maintainability)](https://codeclimate.com/github/theincognitocoder/gem-bootstrap/maintainability)
 
 Gem Bootstrap
