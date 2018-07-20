@@ -8,7 +8,7 @@ def version
     exit(1)
   end
   begin
-    Semver::String.new(ENV['VERSION'])
+    Semver::String.parse(ENV['VERSION'])
   rescue Semver::InvalidFormatError => e
     warn("ENV['VERSION'] #{e.message}")
     exit(1)
