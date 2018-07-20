@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/theincognitocoder/gem-bootstrap'
   spec.license       = 'MIT'
   spec.require_paths = ['lib']
-  spec.files         = Dir['lib/**/*.rb', 'templates/*.mustache']
+  spec.files         = Dir['lib/**/*.rb', 'templates/**/*.mustache']
   spec.bindir        = 'bin'
   spec.executables   = ['gem-bootstrap']
 

@@ -3,13 +3,15 @@
 Unreleased Changes
 ------------------
 
+* Fix glob pattern for templates.
+
 v0.1.2 (2018-07-20)
 --------------------
 
+* Correct name of gem-bootstrap executable in gemspec.
+
 v0.1.1 (2018-07-20)
 --------------------
-
-* Correct name of gem-bootstrap executable in gemspec.
 
 * Update .travis.yml template to use a matrix for deploy entries.
 
