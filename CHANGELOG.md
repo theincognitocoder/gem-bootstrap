@@ -3,6 +3,9 @@
 Unreleased Changes
 ------------------
 
+v0.1.3 (2018-07-20)
+--------------------
+
 * Fix glob pattern for templates.
 
 v0.1.2 (2018-07-20)
