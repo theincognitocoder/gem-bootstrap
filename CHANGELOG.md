@@ -3,6 +3,9 @@
 Unreleased Changes
 ------------------
 
+v0.1.4 (2018-07-20)
+--------------------
+
 * Remove matrix under travis deploy, did not work.
 
 v0.1.3 (2018-07-20)
