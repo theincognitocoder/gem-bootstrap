@@ -3,6 +3,9 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   TargetRubyVersion: 2.3
 
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
@@ -11,6 +14,9 @@ Layout/EmptyLinesAroundClassBody:
 
 Layout/MultilineMethodCallBraceLayout:
   EnforcedStyle: symmetrical
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: compact
 
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
@@ -39,4 +45,12 @@ Metrics/BlockLength:
   Exclude:
     - 'Rakefile'
     - 'tasks/**/*.rake'
+    - 'spec/**/*.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Metrics/LineLength:
+  Exclude:
     - 'spec/**/*.rb'
