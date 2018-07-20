@@ -6,25 +6,26 @@ rvm:
 - ruby-head
 - jruby-head
 deploy:
-- provider: rubygems
-  gemspec: gem-bootstrap.gemspec
-  skip_cleanup: true
-  api_key:
-    secure: xDwsZ/j3an8kpvl7eODYO4tctYOWFVK0LPCL8VntEDgv1Xaxl3r3HCVd5c4YF13a2kfZaqF5WPWd97s8+igrN2ZBsaQ+vg6ZFI3jRISC5zhPb/fJlGsIA5bQmgKQQXS1TuQvbZ9BVeIAO33TOzCkd5RezFO0xAumW3q9XcCWKve+c4GJiCHOQ1tPuL5ADqNd4WNmAF8MfMydC+IO10YBN5H63gmXKYoTad91FTuSijLPqTm1311uDgQ4YsbyH2Fei4LqpHJ9kIofVi2OCh41+PGO3RlsvC/J8+tkNTxqRrH1mVAy5gw7ygTnjPH4XtZq0W18K7HyBI6CMgVXXslUWMfmYlVgVSzmYMgu/Ny+KwnfyC/X7Qoh706OsbkcGKsdifyIUF4IyF712gNxihBk3zHju03WzPVMTBOXLqiHp5T2MU+7arx+ifwNrJpOQ0WTssyR4KNppxq+pEo0+bZ/OTAfoOAsEJ9ydqMqEzUfrsE97AttaMX8uAev6NyUzRQI8hteXaHRYowqV95WTgqvn4eSzuoz7gcfs46vpnTC7RQmHWkCmDRndUC8tgKJlWC9XP2OfM3gchYYlQW6YQklUzdHzFnM9FE1T1+4dZHlvgyYgpqGqV1K/TpZuoPYRQCYtZj36uM1aip7YINHPUWE/3kM/M+Nx1jPiuu64UOXrm4=
-  on:
-    ruby: ruby-2.5.1
-    branch: master
-    tags: true
-- provider: releases
-  skip_cleanup: true
-  fileglob: true
-  file:
-  - docs.tgz
-  - gem-bootstrap-*.gem
-  api_key:
-    secure: pqrstcdRYkVmOvj6BFSmPpKHqva/Njqmlk4GKXU4i5QJiGKtxaYO86usOKnw8wOq04rcy9dxSoQyUDfo7XtPItPSCzz44OSPGypZeFq070H7Qw0IEfOPXOKyvv5kMXOQga8PTYHOKNaT2xEN0jfLNhcDIEcDgnWglThyZQKIg6M=
-  on:
-    ruby: ruby-2.5.1
-    repo: theincognitocoder/gem-bootstrap
-    branch: master
-    tags: true
+  matrix:
+  - provider: rubygems
+    gemspec: gem-bootstrap.gemspec
+    skip_cleanup: true
+    api_key:
+      secure: p3mpEecKX1rkCiSVnItz47Rq7ZjUblq6+4HdzhHABOrpsqM+rdLXn9vsSwMQRHlN56wVMEDImh4w6njhi0yxk5CwiIhOWo96TjhIAh3FixUxCSM6yQFN/+VXSimfVzW+r3UDlpGyQ0h+j+Xkb6AWTg+FUOgk/bwGkBXbWFvxw9DcWbdmLm6VTGFJRVG/MA1pRPDxVja3/IFQAHRV4MZ4nJNfIfFO9ZyPS1PkObebB8yJRDi7keQ5LrLmq8kY3waaLfp9mNI2kkOBR3c7V+CyMAWg1tI0y5TRtZp63JxY26EcbJ2uu2Z9uoyAWEf5fzMkjQkhrL1EXY5n2tNc+qow3NS9FbqcoD8fVRcEYQGtKRafTkMXm+aCvCu95PbJ/r1UHb7qZJDradVRsgaS0klsd6Krted+UQVAGsBXszR/I9M0cQr7jrHr3NfIh1vBusKwVsqqCPD7dI2b3H4eN265QMPqvfWpzOpRRcVPKj07Frp4+vFwX1wCmNrgGXc5JCOSfrnKYSHWLoUn7LotElEX2DXLikOS3gp8ZybnKU0eOGyo0KsnGIYWDRJPM5nG8AVKH9tCQN+QAtyu/4qwzHER+tLJivnakJUGDU+tT8Dk8IyR9iiBc6I9JO+PufJBJX7SAQ7schb/fHUikjpn077GiwYu9oGvq3pmCNbsQedo338=
+    on:
+      ruby: ruby-2.5.1
+      branch: master
+      tags: true
+  - provider: releases
+    skip_cleanup: true
+    fileglob: true
+    file:
+    - docs.tgz
+    - gem-bootstrap-*.gem
+    api_key:
+      secure: gDDPfGed5Ue5xi06CH6IFaVE+MVRe/ZdQJ+TbrX66a8ah9HtTnlEOGhUl5KuGgMo9aTpKjTIoFKgXk/TQGW45Hu883C1xPMedSuBVv5E/W72bCbpYzcFuohWxwFdC+kbzyPUNIMne64D7skheJie3Pv8dmAGf1wxtfBbLOxthOlquDKtDgpXrcTMjayI47TnQj3YN0YLGppe9CyhST/CshBbTvJPjmOBpkoVcIShhXBO2OfJ+nhmHBPtd//pZRySRzTFRlgC9SSjKSYBWlgKvdG/cRUiz2Ez8r9rKk8idIOJCIJRMDLutCoVMvWm0jtI4/6IfIhZnIElUltAaVpNRSIJn/ibxcECnIEOGL5vZSPWszvWx0uuR/O7uTot2fhPeByAvxRoz75YiZtvquy5fWzQ7pu4BtdFd5WeCwqjw8ahBUrvPXqMOgIjlGvSSJEe3LGKG6V8PXCv35gqHOwO8/hsJM42Dr/CvpNV1NnS7zDKhFLk6mF/hBXtnJno6EMnSEiW26k1t3YvlcIq242KIp8iVNqcji6/h/W7llXG5clVE2ZCwdKeGySEfdawgOkXb/me2EE2HYMe/SSa15bhdJtYebkGA1GrQ3124S7nXshsFh61dA0sy85c55Y/kTbIlMv8fIbLOJ5oxAgc8TESaus8YZYBKYemVnvNZoxbOKk=
+    on:
+      ruby: ruby-2.5.1
+      repo: theincognitocoder/gem-bootstrap
+      branch: master
+      tags: true
