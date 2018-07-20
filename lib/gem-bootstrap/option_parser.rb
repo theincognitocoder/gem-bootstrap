@@ -19,7 +19,7 @@ module GemBootstrap
     private
 
     def banner
-      "usage: gem-boostrap \033[4mgem_name\033[0m [options]"
+      "usage: gem-bootstrap \033[4mgem_name\033[0m [options]"
     end
 
   end
