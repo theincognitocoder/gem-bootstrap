@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.files         = Dir['lib/**/*.rb', 'templates/*.mustache']
   spec.bindir        = 'bin'
-  spec.executables   = ['gem-boostrap']
+  spec.executables   = ['gem-bootstrap']
 
   spec.metadata = {
     'bug_tracker_uri'   => 'https://github.com/theincognitocoder/gem-bootstrap/issues',
