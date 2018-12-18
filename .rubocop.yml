@@ -24,6 +24,9 @@ Layout/MultilineOperationIndentation:
 Layout/IndentArray:
   EnforcedStyle: consistent
 
+Style/DoubleNegation:
+  Enabled: false
+
 Style/TrivialAccessors:
   Enabled: false
 
